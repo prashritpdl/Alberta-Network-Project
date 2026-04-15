@@ -26,3 +26,8 @@ Routing Protocol: Configured OSPF Area 0 to ensure dynamic path selection and hi
 Redundancy: Validated that traffic can reroute through Ottawa HQ if the Hamilton-Alberta link fails.
 
 Security: Performed password recovery and hardened the Enable Secret and Console passwords across all branch routers.
+
+## PP-Global Infrastructure Phase 2: Centralized Services
+* **Branding Update:** Transitioned architecture to PP-Global standards.
+* **DHCP Relay:** Implemented 'ip helper-address' on branch routers to facilitate centralized IP management from PP-Ottawa-Server.
+* **Scalability:** This design allows PP-Global to add new branches (like Calgary or Edmonton) without manual DHCP configuration on the edge.
