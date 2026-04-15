@@ -11,3 +11,5 @@ Design and implement a redundant, secure network architecture connecting a Hamil
 
 ### **How to Use**
 Download the `.pkt` file and open it in **Cisco Packet Tracer 8.x** to view the full topology and configurations.
+### Update: OSPF Triangle Complete
+* Successfully linked Ottawa, Hamilton, and Alberta routers using OSPF Area 0.
