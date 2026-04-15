@@ -37,3 +37,8 @@ Security: Performed password recovery and hardened the Enable Secret and Console
 * **Diagnosis:** Identified that while DHCP requests were reaching the central server, the server lacked an OSPF route to return the IP 'Offer' to the branch LANs.
 * **Resolution:** Configured OSPF 'network' statements for the LAN subnets (10.20.0.0 and 10.30.0.0) on the branch routers. 
 * **Outcome:** Successfully established end-to-end routing, allowing centralized IP management for all PP-Global branches.
+
+## PP-Global Phase 3: Network Hardening
+* **Access Control:** Implemented Standard ACLs on the Alberta Gateway.
+* **Traffic Filtering:** Restricted lateral communication between Hamilton and Alberta LANs to reduce attack surface.
+* **Policy:** Maintained open paths for Centralized Services (Ottawa HQ) while enforcing branch isolation.
