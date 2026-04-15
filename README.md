@@ -31,3 +31,9 @@ Security: Performed password recovery and hardened the Enable Secret and Console
 * **Branding Update:** Transitioned architecture to PP-Global standards.
 * **DHCP Relay:** Implemented 'ip helper-address' on branch routers to facilitate centralized IP management from PP-Ottawa-Server.
 * **Scalability:** This design allows PP-Global to add new branches (like Calgary or Edmonton) without manual DHCP configuration on the edge.
+
+### **Specialist Note: Troubleshooting DHCP Relay**
+* **Challenge:** Remote PCs initially failed to receive IP addresses via DHCP Relay.
+* **Diagnosis:** Identified that while DHCP requests were reaching the central server, the server lacked an OSPF route to return the IP 'Offer' to the branch LANs.
+* **Resolution:** Configured OSPF 'network' statements for the LAN subnets (10.20.0.0 and 10.30.0.0) on the branch routers. 
+* **Outcome:** Successfully established end-to-end routing, allowing centralized IP management for all PP-Global branches.
