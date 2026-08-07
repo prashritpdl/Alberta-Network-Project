@@ -1,0 +1,29 @@
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption 
+!
+hostname Toronto-Branch
+!
+enable secret class
+!
+ip routing
+!
+interface Loopback0
+description Toronto Router ID
+ip address 10.1.3.1 255.255.255.255
+!
+interface GigabitEthernet0/0/0
+description Connection to ISP
+ip address 10.1.3.2 255.255.255.252
+no shutdown
+!
+interface GigabitEthernet0/0/1
+description Connection to Toronto
+ip address 192.168.30.1 255.255.255.0
+no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 100.1.3.1
+!
+end

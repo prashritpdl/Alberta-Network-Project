@@ -1,0 +1,28 @@
+! 
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Calgary-Branch
+!
+enable secret class
+!
+ip routing
+interface Loopback0
+description Calgary Router ID
+ip address 10.1.2.1 255.255.255.255
+!
+interface GigabitEthernet0/0/0
+description Connection to ISP backbone
+ip address 100.1.2.2 255.255.255.252
+no shutdown
+!
+interface GigabitEthernet0/0/1
+description Connection to Calgary 
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 100.1.2.1
+!
+end
